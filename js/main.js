@@ -6,6 +6,7 @@ const allow = document.getElementById("allow");
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
 
+const currentCity = document.getElementById("city");
 const currentDay = document.getElementById("currentDay");
 const currentDate = document.getElementById("currentDate");
 const currentTemp = document.getElementById("currentTemp");
@@ -59,8 +60,7 @@ async function getForcast(city) {
     let tempC = day1Forecast.hour[9].temp_c;
     let tempIcon = day1Forecast.hour[9].condition.icon;
     console.log(tempC);
-    const city = document.getElementById("city");
-    city.innerHTML = forecastData.location.name;
+    currentCity.innerHTML = forecastData.location.name;
     currentTemp.innerHTML = `${tempC}°C`;
     currentDisc.innerHTML = condDisc;
     currentIcon.setAttribute("src", `${tempIcon}`);
@@ -98,14 +98,14 @@ function findCurrentLocation() {
     );
     if (response.ok) {
       let data = await response.json();
-      city.innerHTML = data.city;
-      currentCity = data.city;
+      let currentCity = data.city;
+      currentCity.innerHTML = data.city;
       getForcast(currentCity);
     }
   }
   // sharing the location rejected from the user so we function what to do and sent it to getCurrentPosation argument and save it in the posation parameter for my error function
   function error() {
-    city.innerHTML = "Allow Location Please";
+    currentCity.innerHTML = "Allow Location Please";
     bgv.setAttribute("src", `./imgs&video/Sunny.mp4`);
     loading.classList.remove("d-none");
     allow.classList.remove("d-none");
