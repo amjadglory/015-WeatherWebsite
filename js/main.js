@@ -54,12 +54,9 @@ async function getForcast(city) {
     let forecastData = await response.json();
 
     let day1Forecast = forecastData.forecast.forecastday[0];
-    console.log(forecastData.forecast.forecastday[0]);
     let condDisc = day1Forecast.hour[9].condition.text;
-    console.log(condDisc);
     let tempC = day1Forecast.hour[9].temp_c;
     let tempIcon = day1Forecast.hour[9].condition.icon;
-    console.log(tempC);
     currentCity.innerHTML = forecastData.location.name;
     currentTemp.innerHTML = `${tempC}°C`;
     currentDisc.innerHTML = condDisc;
