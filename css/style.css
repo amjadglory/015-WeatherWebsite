@@ -1,0 +1,81 @@
+/* variables */
+:root {
+  --mainColor: #40b4c1;
+}
+
+/* globalclasses */
+.blur {
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  background-image: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(64, 180, 193, 0.1)
+  );
+}
+.blur2 {
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  background-image: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(64, 180, 193, 0.1)
+  );
+}
+.blur3 {
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+  background-image: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(64, 180, 193, 0.1)
+  );
+}
+
+#bgv {
+  z-index: -21231634;
+  width: 100%;
+}
+#logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+#inputGroup {
+  width: 50%;
+  z-index: 11;
+
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+
+}
+h1,
+#searchBtn,
+i {
+  color: var(--mainColor) !important;
+}
+
+#currentTemp {
+  font-size: 60px !important;
+}
+
+#loading {
+  z-index: 10;
+  inset: 0;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#loading img {
+  animation: spin 3s infinite linear;
+  width: 100px;
+}

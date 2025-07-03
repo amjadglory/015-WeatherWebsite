@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Website</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div id="loading" class="blur3 position-fixed d-flex justify-content-center align-items-center d-none">
+      <img src="http://cdn.weatherapi.com/weather/64x64/day/113.png" alt="">
+    </div>
+    <video
+      src="./imgs&video/clear.mp4"
+      loop
+      autoplay
+      muted
+      id="bgv"
+      class="position-fixed"
+    ></video>
+    <nav class="navbar blur m-auto rounded-3">
+      <div class="container d-flex justify-content-center align-items-center">
+        <h1 class="me-3">Weather</h1>
+        <a class="navbar-brand" href="#">
+          <img src="imgs&video/logo.png" alt="Weather Website" id="logo" />
+        </a>
+        <h1>Website</h1>
+      </div>
+    </nav>
+    <div id="inputGroup" class="input-group my-3 m-auto">
+      <span class="input-group-text bg-black border-black rounded-5 me-1" id=""
+        ><i class="fa-solid fa-location-dot"></i
+      ></span>
+      <input
+        id="searchInput"
+        type="search"
+        class="form-control rounded-pill border-0"
+        placeholder="Find Your Location..."
+        aria-label="Find Your Location..."
+        aria-describedby="basic-addon1"
+      />
+      <button
+        class="input-group-text bg-black border-black rounded-5 ms-1"
+        id="searchBtn"
+      >
+        Search
+      </button>
+    </div>
+    <section>
+      <div class="container">
+        <div class="card-group row w-100 m-auto mt-5 shadow-lg">
+          <div class="card blur2 bg-transparent">
+            <div
+              class="card-header text-white d-flex justify-content-between align-items-center"
+            >
+              <span id="currentDay"></span>
+              <span id="currentDate"></span>
+            </div>
+            <div class="card-body">
+              <h3 id="city" class="card-text text-white"></h3>
+              <h2
+                id="currentTemp"
+                class="card-title text-white my-5 text-center"
+              >
+                TEMP
+              </h2>
+              <div class="card-text">
+                <img class="w-25" id="currentIcon" src="" alt="" />
+                <span id="currentDisc" class="text-white fs-5">Rainy</span>
+              </div>
+            </div>
+          </div>
+          <div class="card blur2 bg-transparent">
+            <div
+              id="secondDay"
+              class="card-header text-white d-flex justify-content-center align-items-center"
+            ></div>
+            <div
+              class="card-body text-center text-white d-flex flex-column justify-content-center"
+            >
+              <img class="w-25 m-auto my-0" id="secondIcon" src="" alt="" />
+              <h4 id="secondTemp" class="card-text fs-1">TEMP</h4>
+              <p id="secondDisc" class="card-text">Rainy</p>
+            </div>
+          </div>
+          <div class="card blur2 bg-transparent">
+            <div
+              id="thirdDay"
+              class="card-header text-white d-flex justify-content-center align-items-center"
+            ></div>
+            <div
+              class="card-body text-center text-white d-flex flex-column justify-content-center"
+            >
+              <img class="w-25 m-auto my-0" id="thirdIcon" src="" alt="" />
+              <h4 id="thirdTemp" class="card-text fs-1">TEMP</h4>
+              <p id="thirdDisc" class="card-text">Rainy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
