@@ -1,6 +1,7 @@
 //! select elements !\\
 const bgv = document.getElementById("bgv");
 const loading = document.getElementById("loading");
+const allow = document.getElementById("allow");
 
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
@@ -62,10 +63,7 @@ async function getForcast(city) {
     currentTemp.innerHTML = `${tempC}°C`;
     currentDisc.innerHTML = condDisc;
     currentIcon.setAttribute("src", `${tempIcon}`);
-    bgv.setAttribute(
-      "src",
-      `./imgs&video/${condDisc}.mp4`
-    );
+    bgv.setAttribute("src", `./imgs&video/${condDisc}.mp4`);
 
     let day2Forecast = forecastData.forecast.forecastday[1];
     let condDiscDay2 = day2Forecast.hour[9].condition.text;
@@ -106,6 +104,9 @@ function findCurrentLocation() {
   // sharing the location rejected from the user so we function what to do and sent it to getCurrentPosation argument and save it in the posation parameter for my error function
   function error() {
     city.innerHTML = "Allow Location Please";
+    bgv.setAttribute("src", `./imgs&video/Sunny.mp4`);
+    loading.classList.remove("d-none");
+    allow.classList.remove("d-none");
   }
 }
 findCurrentLocation();
