@@ -55,6 +55,7 @@ async function getForcast(city) {
     let day1Forecast = forecastData.forecast.forecastday[0];
     console.log(forecastData.forecast.forecastday[0]);
     let condDisc = day1Forecast.hour[9].condition.text;
+    console.log(condDisc);
     let tempC = day1Forecast.hour[9].temp_c;
     let tempIcon = day1Forecast.hour[9].condition.icon;
     console.log(tempC);
@@ -81,6 +82,7 @@ async function getForcast(city) {
     thirdDisc.innerHTML = condDiscDay3;
     thirdIcon.setAttribute("src", `${tempIconDay3}`);
     loading.classList.add("d-none");
+    allow.classList.add("d-none");
   }
 }
 // display current location function
