@@ -41,9 +41,9 @@ currentDate.innerHTML = `${dateNow.getFullYear()} / ${
   dateNow.getMonth() + 1
 } / ${dateNow.getDate()}`;
 
-secondDay.innerHTML = weekDays[dateNow.getDay() + 1];
+secondDay.innerHTML = weekDays[(dateNow.getDay() + 1) % 7];
 
-thirdDay.innerHTML = weekDays[dateNow.getDay() + 2];
+thirdDay.innerHTML = weekDays[(dateNow.getDay() + 2) % 7];
 
 async function getForcast(city) {
   let response = await fetch(
